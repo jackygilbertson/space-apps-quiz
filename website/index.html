@@ -1,0 +1,119 @@
+<html>
+<head>
+	<title>Space Quiz! (Name TBD)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<link href='http://fonts.googleapis.com/css?family=Economica:400,700,400italic,700italic|Open+Sans+Condensed:700,300,300italic|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+
+
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" /> -->
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
+</head>
+
+<body>
+
+<div class="page">
+	<ol id="questions">
+		<li id="question2" class="question">
+			<div class="question">
+				<h4>Do you really know about <em>space</em>?</h4>
+
+				<ul>
+					<li class="answer1">
+						<input type="radio" name="q1a1" class="right">
+						<label for="q1a1">I did, in fact, know about space.</label>
+					</li>
+					<li class="answer2">
+						<input type="radio" name="q1a2" class="wrong">
+						<label for="q1a2">I have heard about space before.</label>
+					</li>
+					<li>
+						<input type="radio" name="q1a3" class="wrong">
+						<label for="q1a3">Nope, never heard about that.</label>
+					</li>
+				</ul>
+			</div>
+			<div class="answer visulization">
+				<h4 class="answer wrong">You got the question wrong!</h2>
+				<h4 class="answer right">You got the question right!</h2>
+
+				<p>Space is a thing! You should learn about it. It's pretty rad.</p>
+
+				<a href="#question3" class="next">Next Question Please!</a>
+			</div>
+		</li><!-- end of Question -->
+		<li id="question1" class="question">
+			<div class="question">
+				<h4>Do you know about <em>space</em>?</h4>
+
+				<ul>
+					<li class="answer1">
+						<input type="radio" name="question1" class="right">
+						<label for="q1a1">I did, in fact, know about space.</label>
+					</li>
+					<li class="answer2">
+						<input type="radio" name="question1" class="wrong">
+						<label for="q1a2">I have heard about space before.</label>
+					</li>
+					<li>
+						<input type="radio" name="question1" class="wrong">
+						<label for="q1a3">Nope, never heard about that.</label>
+					</li>
+				</ul>
+			</div>
+			<div class="answer visulization">
+				<h4 class="answer wrong">You got the question wrong!</h2>
+				<h4 class="answer right">You got the question right!</h2>
+
+				<p>Space is a thing! You should learn about it. It's pretty rad.</p>
+
+				<a href="#question2" class="next">Next Question Please!</a>
+			</div>
+		</li><!-- end of Question -->
+	</ol>
+
+	<div id="intro" class="current earth">
+		<h1>Learn about Space!</h1>
+
+		<h4>Welcome aspiring astronauts!</h4>
+
+		<p>If you want to make it to space, you've got to <em>know</em> about space. Test your knowledge of our solar system, the galaxy and the universe by using this fun quiz!</p>
+
+		<a href="#question1" class="start">Start Game</a>
+	</div>
+</div>
+
+<div id="ship" class="intro">
+	<a class="ship"></a>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('a.start').click(function() {
+			$('#question1').slideToggle(1000).addClass('active');
+			$('#intro').delay(800).queue(function() {
+				$(this).remove();
+			});
+		});
+
+		$('a.next').click(function() {
+			$('.question.active').addClass('lastActive').prev('.question').slideToggle().addClass('active');
+			$('.question.lastActive').removeClass('active').removeClass('lastActive').delay(800).queue(function() {
+					$(this).remove();
+				});
+		});
+
+		$('input.wrong').click(function() {
+			$(this).parent('li').parent('ul').parent('div.question').siblings('div.answer').addClass('wrong');
+			$(this).parent('li').parent('ul').parent('div.question').hide();
+		});
+
+		$('input.right').click(function() {
+			$(this).parent('li').parent('ul').parent('div.question').toggle().siblings('div.answer').addClass('right')
+		});
+	});
+</script>
+
+</body>
+</html>

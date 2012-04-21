@@ -1,0 +1,356 @@
+/* line 17, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 115, ../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.11.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, scss/modules/_defaults.scss */
+body {
+  background: #000;
+  font-family: 'Open Sans', sans-serif;
+  color: #9fa5aa;
+  font-size: 14px;
+  line-height: 20px;
+}
+/* line 39, scss/modules/_defaults.scss */
+body i, body em {
+  font-style: italic;
+}
+/* line 43, scss/modules/_defaults.scss */
+body b, body strong {
+  font-weight: bold;
+}
+
+/* line 48, scss/modules/_defaults.scss */
+#ui-loader {
+  display: none !important;
+}
+
+/* line 52, scss/modules/_defaults.scss */
+h1, h2, h3, h4, h5 {
+  margin: 20px 0;
+  color: #FFF;
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-shadow: 0 1px 2px #000;
+}
+
+/* line 59, scss/modules/_defaults.scss */
+h1 {
+  font-size: 70px;
+  line-height: 80px;
+}
+
+/* line 64, scss/modules/_defaults.scss */
+h2 {
+  font-size: 56px;
+  line-height: 60px;
+}
+
+/* line 69, scss/modules/_defaults.scss */
+h3 {
+  font-size: 42px;
+  line-height: 40px;
+}
+
+/* line 74, scss/modules/_defaults.scss */
+h4 {
+  font-size: 28px;
+  line-height: 20px;
+}
+
+/* line 79, scss/modules/_defaults.scss */
+h5 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* line 84, scss/modules/_defaults.scss */
+p {
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+/* line 91, scss/modules/_defaults.scss */
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  background-image: url(i/spacebg.png);
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 100% auto;
+}
+
+/* line 101, scss/modules/_defaults.scss */
+#ship {
+  z-index: 1000;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  height: 20%;
+  max-height: 120px;
+  min-height: 80px;
+  text-align: center;
+}
+/* line 114, scss/modules/_defaults.scss */
+#ship .ship {
+  display: inline-block;
+  width: 120px;
+  height: 100%;
+  background: transparent;
+  background-image: url(i/spaceship@2x.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 100%;
+}
+/* line 125, scss/modules/_defaults.scss */
+#ship.small {
+  max-height: 100px;
+}
+
+/* line 1, scss/modules/_intro.scss */
+#intro {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  max-height: 600px;
+  min-height: 420px;
+  padding: 20px;
+  text-align: center;
+}
+/* line 11, scss/modules/_intro.scss */
+#intro:before {
+  content: '';
+  display: block;
+  margin: -20px;
+  margin-bottom: 0;
+  background: transparent;
+  background-image: url(i/spacebg-fade.png);
+  background-repeat: repeat-x;
+  background-size: 100% auto;
+  height: 30px;
+}
+/* line 24, scss/modules/_intro.scss */
+#intro h1 {
+  z-index: 10000;
+  position: relative;
+  height: 150px;
+  margin: -20px;
+  margin-top: -30px;
+  margin-bottom: 10px;
+  background: transparent url(i/title@2x.png) center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  text-indent: -10000000px;
+}
+/* line 39, scss/modules/_intro.scss */
+#intro h4 {
+  margin-top: 0;
+}
+/* line 43, scss/modules/_intro.scss */
+#intro a.start {
+  display: inline-block;
+  padding: 8px 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.5);
+  background: #c70022;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c70022), color-stop(90%, #88061d), color-stop(100%, #88061d));
+  background-image: -webkit-linear-gradient(top, #c70022, #88061d 90%, #88061d);
+  background-image: -moz-linear-gradient(top, #c70022, #88061d 90%, #88061d);
+  background-image: -o-linear-gradient(top, #c70022, #88061d 90%, #88061d);
+  background-image: -ms-linear-gradient(top, #c70022, #88061d 90%, #88061d);
+  background-image: linear-gradient(top, #c70022, #88061d 90%, #88061d);
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 25, scss/modules/_defaults.scss */
+#intro a.start:hover {
+  position: relative;
+  top: 1px;
+}
+/* line 47, scss/modules/_intro.scss */
+#intro.earth {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(50%, #002e36), color-stop(100%, #6591b1));
+  background-image: -webkit-linear-gradient(top, #000000, #002e36 50%, #6591b1);
+  background-image: -moz-linear-gradient(top, #000000, #002e36 50%, #6591b1);
+  background-image: -o-linear-gradient(top, #000000, #002e36 50%, #6591b1);
+  background-image: -ms-linear-gradient(top, #000000, #002e36 50%, #6591b1);
+  background-image: linear-gradient(top, #000000, #002e36 50%, #6591b1);
+}
+/* line 50, scss/modules/_intro.scss */
+#intro.earth:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  min-height: 70px;
+  background: transparent;
+  background-image: url(i/earth.png);
+  background-position: bottom center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+/* line 1, scss/modules/_question.scss */
+li.question {
+  display: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  -moz-box-shadow: inset 0 0 5px 5px black;
+  -webkit-box-shadow: inset 0 0 5px 5px black;
+  -o-box-shadow: inset 0 0 5px 5px black;
+  box-shadow: inset 0 0 5px 5px black;
+}
+/* line 10, scss/modules/_question.scss */
+li.question.active {
+  display: block !important;
+  height: 100%;
+}
+/* line 14, scss/modules/_question.scss */
+li.question.active > div {
+  display: inline-block;
+}
+/* line 19, scss/modules/_question.scss */
+li.question > div {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  white-space: normal;
+}
+/* line 30, scss/modules/_question.scss */
+li.question > div > h2, li.question > div > h3, li.question > div > h4 {
+  margin-top: 0;
+  font-size: 24px;
+}
+/* line 37, scss/modules/_question.scss */
+li.question div.question ul {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+/* line 46, scss/modules/_question.scss */
+li.question div.question ul li {
+  margin: 10px 0;
+}
+/* line 49, scss/modules/_question.scss */
+li.question div.question ul li input[type=radio] {
+  margin-right: 10px;
+}
+/* line 55, scss/modules/_question.scss */
+li.question div.answer {
+  z-index: 10000;
+  background: #222;
+  text-align: center;
+}
+/* line 60, scss/modules/_question.scss */
+li.question div.answer > h2, li.question div.answer > h3, li.question div.answer > h4 {
+  display: none;
+  margin-top: 0;
+  text-align: center;
+}
+/* line 67, scss/modules/_question.scss */
+li.question div.answer.right h2.right, li.question div.answer.right h3.right, li.question div.answer.right h4.right {
+  display: block;
+}
+/* line 71, scss/modules/_question.scss */
+li.question div.answer.wrong {
+  background: #c70022;
+}
+/* line 73, scss/modules/_question.scss */
+li.question div.answer.wrong h2.wrong, li.question div.answer.wrong h3.wrong, li.question div.answer.wrong h4.wrong {
+  display: block;
+}
