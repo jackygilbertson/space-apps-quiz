@@ -65,28 +65,33 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* line 31, scss/modules/_defaults.scss */
+a, a:visited {
+  color: #c70022;
+}
+
+/* line 35, scss/modules/_defaults.scss */
+html {
+  -webkit-text-size-adjust: none;
+}
+
+/* line 39, scss/modules/_defaults.scss */
 body {
-  background: #000;
+  background: #222;
   font-family: 'Open Sans', sans-serif;
   color: #9fa5aa;
   font-size: 14px;
   line-height: 20px;
 }
-/* line 39, scss/modules/_defaults.scss */
+/* line 47, scss/modules/_defaults.scss */
 body i, body em {
   font-style: italic;
 }
-/* line 43, scss/modules/_defaults.scss */
+/* line 51, scss/modules/_defaults.scss */
 body b, body strong {
   font-weight: bold;
 }
 
-/* line 48, scss/modules/_defaults.scss */
-#ui-loader {
-  display: none !important;
-}
-
-/* line 52, scss/modules/_defaults.scss */
+/* line 56, scss/modules/_defaults.scss */
 h1, h2, h3, h4, h5 {
   margin: 20px 0;
   color: #FFF;
@@ -94,68 +99,92 @@ h1, h2, h3, h4, h5 {
   text-shadow: 0 1px 2px #000;
 }
 
-/* line 59, scss/modules/_defaults.scss */
+/* line 63, scss/modules/_defaults.scss */
 h1 {
   font-size: 70px;
   line-height: 80px;
 }
 
-/* line 64, scss/modules/_defaults.scss */
+/* line 68, scss/modules/_defaults.scss */
 h2 {
   font-size: 56px;
   line-height: 60px;
 }
 
-/* line 69, scss/modules/_defaults.scss */
+/* line 73, scss/modules/_defaults.scss */
 h3 {
   font-size: 42px;
   line-height: 40px;
 }
 
-/* line 74, scss/modules/_defaults.scss */
+/* line 78, scss/modules/_defaults.scss */
 h4 {
   font-size: 28px;
   line-height: 20px;
 }
 
-/* line 79, scss/modules/_defaults.scss */
+/* line 83, scss/modules/_defaults.scss */
 h5 {
   font-size: 14px;
   line-height: 20px;
 }
 
-/* line 84, scss/modules/_defaults.scss */
+/* line 88, scss/modules/_defaults.scss */
 p {
   margin: 20px 0;
   font-size: 14px;
 }
 
-/* line 91, scss/modules/_defaults.scss */
+/* line 95, scss/modules/_defaults.scss */
+.hide, .ui-loader, .ui-loader-default {
+  display: none !important;
+}
+
+/* line 99, scss/modules/_defaults.scss */
 .page {
-  max-width: 600px;
+  position: relative;
+  height: 100%;
+  min-width: 320px;
+  max-width: 480px;
   margin: 0 auto;
+  background-color: #000;
   background-image: url(i/spacebg.png);
   background-position: center center;
   background-repeat: repeat;
   background-size: 100% auto;
 }
 
-/* line 101, scss/modules/_defaults.scss */
+@media screen and (max-width: 320px) {
+  /* line 117, scss/modules/_defaults.scss */
+  .page {
+    height: 416px !important;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* line 123, scss/modules/_defaults.scss */
+  .page {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 10px !important;
+    height: 270px !important;
+  }
+}
+/* line 131, scss/modules/_defaults.scss */
 #ship {
   z-index: 1000;
-  position: fixed;
-  bottom: 20px;
-  left: 0;
+  position: absolute;
+  bottom: 10px;
   right: 0;
+  left: 0;
   height: 20%;
   max-height: 120px;
   min-height: 80px;
   text-align: center;
 }
-/* line 114, scss/modules/_defaults.scss */
+/* line 145, scss/modules/_defaults.scss */
 #ship .ship {
   display: inline-block;
-  width: 120px;
+  width: 80px;
   height: 100%;
   background: transparent;
   background-image: url(i/spaceship@2x.png);
@@ -163,7 +192,7 @@ p {
   background-position: top center;
   background-size: auto 100%;
 }
-/* line 125, scss/modules/_defaults.scss */
+/* line 156, scss/modules/_defaults.scss */
 #ship.small {
   max-height: 100px;
 }
@@ -175,9 +204,8 @@ p {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
   height: 100%;
-  max-height: 600px;
-  min-height: 420px;
   padding: 20px;
   text-align: center;
 }
@@ -197,7 +225,8 @@ p {
 #intro h1 {
   z-index: 10000;
   position: relative;
-  height: 150px;
+  height: 120px;
+  max-width: 320px;
   margin: -20px;
   margin-top: -30px;
   margin-bottom: 10px;
@@ -206,11 +235,17 @@ p {
   background-size: auto 100%;
   text-indent: -10000000px;
 }
-/* line 39, scss/modules/_intro.scss */
+/* line 41, scss/modules/_intro.scss */
 #intro h4 {
-  margin-top: 0;
+  margin: 0;
+  text-align: center;
 }
-/* line 43, scss/modules/_intro.scss */
+/* line 46, scss/modules/_intro.scss */
+#intro p {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+/* line 51, scss/modules/_intro.scss */
 #intro a.start {
   display: inline-block;
   padding: 8px 20px;
@@ -235,13 +270,16 @@ p {
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
+  position: relative;
+  z-index: 100000000;
+  text-align: center;
 }
 /* line 25, scss/modules/_defaults.scss */
 #intro a.start:hover {
   position: relative;
   top: 1px;
 }
-/* line 47, scss/modules/_intro.scss */
+/* line 58, scss/modules/_intro.scss */
 #intro.earth {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #000000), color-stop(50%, #002e36), color-stop(100%, #6591b1));
   background-image: -webkit-linear-gradient(top, #000000, #002e36 50%, #6591b1);
@@ -250,7 +288,7 @@ p {
   background-image: -ms-linear-gradient(top, #000000, #002e36 50%, #6591b1);
   background-image: linear-gradient(top, #000000, #002e36 50%, #6591b1);
 }
-/* line 50, scss/modules/_intro.scss */
+/* line 61, scss/modules/_intro.scss */
 #intro.earth:after {
   content: '';
   position: absolute;
@@ -260,14 +298,52 @@ p {
   display: block;
   min-height: 70px;
   background: transparent;
-  background-image: url(i/earth.png);
+  background-image: url(i/intro-earth.png);
   background-position: bottom center;
   background-size: auto 100%;
   background-repeat: no-repeat;
 }
 
+/* Portrait */
+@media screen and (max-width: 320px) {
+  /* line 84, scss/modules/_intro.scss */
+  body {
+    opacity: 1;
+  }
+}
+/* Landscape */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* line 88, scss/modules/_intro.scss */
+  #intro {
+    text-align: left;
+  }
+  /* line 92, scss/modules/_intro.scss */
+  #intro h1 {
+    width: auto !important;
+    max-width: 100% !important;
+    margin-bottom: -10px;
+    background-position: -40% 100%;
+  }
+  /* line 98, scss/modules/_intro.scss */
+  #intro p {
+    margin: 20px 0;
+  }
+  /* line 101, scss/modules/_intro.scss */
+  #intro a.button {
+    width: 50% !important;
+  }
+  /* line 104, scss/modules/_intro.scss */
+  #intro.earth:after {
+    background-position: 200% 100%;
+  }
+
+  /* line 109, scss/modules/_intro.scss */
+  #ship {
+    text-align: right;
+  }
+}
 /* line 1, scss/modules/_question.scss */
-li.question {
+.question {
   display: none;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -282,16 +358,16 @@ li.question {
   box-shadow: inset 0 0 5px 5px black;
 }
 /* line 10, scss/modules/_question.scss */
-li.question.active {
+.question.active {
   display: block !important;
   height: 100%;
 }
-/* line 14, scss/modules/_question.scss */
-li.question.active > div {
+/* line 15, scss/modules/_question.scss */
+.question.active > div {
   display: inline-block;
 }
-/* line 19, scss/modules/_question.scss */
-li.question > div {
+/* line 20, scss/modules/_question.scss */
+.question > div {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -303,13 +379,13 @@ li.question > div {
   padding: 20px;
   white-space: normal;
 }
-/* line 30, scss/modules/_question.scss */
-li.question > div > h2, li.question > div > h3, li.question > div > h4 {
+/* line 31, scss/modules/_question.scss */
+.question > div > h2, .question > div > h3, .question > div > h4 {
   margin-top: 0;
   font-size: 24px;
 }
-/* line 37, scss/modules/_question.scss */
-li.question div.question ul {
+/* line 38, scss/modules/_question.scss */
+.question > div.question ul {
   margin-left: -10px;
   margin-right: -10px;
   padding: 10px;
@@ -322,35 +398,67 @@ li.question div.question ul {
   border-radius: 10px;
   font-size: 16px;
 }
-/* line 46, scss/modules/_question.scss */
-li.question div.question ul li {
+/* line 47, scss/modules/_question.scss */
+.question > div.question ul li {
   margin: 10px 0;
 }
-/* line 49, scss/modules/_question.scss */
-li.question div.question ul li input[type=radio] {
+/* line 50, scss/modules/_question.scss */
+.question > div.question ul li input[type=radio] {
   margin-right: 10px;
 }
-/* line 55, scss/modules/_question.scss */
-li.question div.answer {
-  z-index: 10000;
-  background: #222;
+/* line 53, scss/modules/_question.scss */
+.question > div.question ul li .ui-radio {
+  display: inline-block;
+}
+/* line 59, scss/modules/_question.scss */
+.question > div.hint {
+  position: relative;
+  display: none;
+}
+/* line 63, scss/modules/_question.scss */
+.question > div.hint canvas {
+  margin: 0 !important;
+  width: 100%;
+}
+/* line 67, scss/modules/_question.scss */
+.question > div.hint #canvascontainer {
+  position: relative !important;
+}
+/* line 70, scss/modules/_question.scss */
+.question > div.hint #canvascontainer canvas {
+  top: 0;
+  left: 0;
+}
+/* line 77, scss/modules/_question.scss */
+.question > div.hint#h1 canvas {
+  margin: 50px 0 0 50px !important;
+}
+/* line 82, scss/modules/_question.scss */
+.question > div.hint#h3 li#listitem {
+  position: absolute;
+  top: 300px;
+  left: 20px;
+}
+/* line 89, scss/modules/_question.scss */
+.question > div.answer {
+  position: relative;
+  z-index: 100000;
+  background: #11;
   text-align: center;
 }
-/* line 60, scss/modules/_question.scss */
-li.question div.answer > h2, li.question div.answer > h3, li.question div.answer > h4 {
+/* line 96, scss/modules/_question.scss */
+.question > div.answer h2.right, .question > div.answer h3.right, .question > div.answer h4.right,
+.question > div.answer h2.wrong, .question > div.answer h3.wrong, .question > div.answer h4.wrong {
   display: none;
   margin-top: 0;
   text-align: center;
 }
-/* line 67, scss/modules/_question.scss */
-li.question div.answer.right h2.right, li.question div.answer.right h3.right, li.question div.answer.right h4.right {
+/* line 103, scss/modules/_question.scss */
+.question > div.answer.right h2.right, .question > div.answer.right h3.right, .question > div.answer.right h4.right {
   display: block;
 }
-/* line 71, scss/modules/_question.scss */
-li.question div.answer.wrong {
-  background: #c70022;
-}
-/* line 73, scss/modules/_question.scss */
-li.question div.answer.wrong h2.wrong, li.question div.answer.wrong h3.wrong, li.question div.answer.wrong h4.wrong {
+/* line 109, scss/modules/_question.scss */
+.question > div.answer.wrong h2.wrong, .question > div.answer.wrong h3.wrong, .question > div.answer.wrong h4.wrong {
   display: block;
+  color: #c70022;
 }

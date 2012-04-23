@@ -1,116 +1,247 @@
 <html>
 <head>
 	<title>Space Quiz! (Name TBD)</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
 	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="gravity.css" />
 	<link href='http://fonts.googleapis.com/css?family=Economica:400,700,400italic,700italic|Open+Sans+Condensed:700,300,300italic|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
-
-	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" /> -->
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
+	
+	<script src="http://www.html5canvastutorials.com/libraries/kinetic-v3.7.4.js"></script>
+	<style>
+		#h1 canvas {
+			margin: 20px 0 0 20px;
+		}
+	</style>
 </head>
 
-<body>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
 
 <div class="page">
 	<ol id="questions">
-		<li id="question2" class="question">
-			<div class="question">
-				<h4>Do you really know about <em>space</em>?</h4>
+		<li class="question" id="question3">
 
+			<div class="question" id="q3" data-role="page">
+				<div data-role="content">
+
+				<h4>Can gravity exist without air?</h4>
 				<ul>
 					<li class="answer1">
-						<input type="radio" name="q1a1" class="right">
-						<label for="q1a1">I did, in fact, know about space.</label>
+						<input type="radio" class="right">
+						<label for="question3">Yes.</label>
 					</li>
 					<li class="answer2">
-						<input type="radio" name="q1a2" class="wrong">
-						<label for="q1a2">I have heard about space before.</label>
-					</li>
-					<li>
-						<input type="radio" name="q1a3" class="wrong">
-						<label for="q1a3">Nope, never heard about that.</label>
+						<input type="radio" class="wrong">
+						<label for="question3">No.</label>
 					</li>
 				</ul>
-			</div>
-			<div class="answer visulization">
-				<h4 class="answer wrong">You got the question wrong!</h2>
-				<h4 class="answer right">You got the question right!</h2>
+				
+				<ul data-role="listview" data-inset="true">
+	                <li id="listitem"><a href="#h3" class="hint">Need a hint?</a></li>
+				</ul>
 
-				<p>Space is a thing! You should learn about it. It's pretty rad.</p>
+				</div>
+			</div> <!-- /q 1 -->
 
-				<a href="#question3" class="next">Next Question Please!</a>
+			<div class="hint" id="h3" data-role="page">
+				<div data-role="content">		
+				
+					<h4>Need a Hint?</h3>
+						<script src="js/gravity.js"></script>
+						<button type="button" class="button">Add air</button> 
+						<button type="button" class="button">Remove air</button> 
+
+					    <div id="canvascontainer">
+					    </div>	
+						
+					<ul data-role="listview" data-inset="true">
+	                    <li id="listitem">Hope that helped! <a href="#q3">Answer it now!</a></li>
+					</ul>
+
+				</div> <!-- /content -->
+			</div> <!-- /h 1 -->
+			
+			
+			<div id="a3" class="answer" data-role="page">
+				<div data-role="content">		
+					<h4 class="answer wrong">You got the question wrong!</h2>
+					<h4 class="answer right">You got the question right!</h2>
+
+					<p>Space is a thing! You should learn about it. It's pretty rad.</p>
+
+					<a href="#question4" class="next">Next Question Please!</a>
+				</div>
 			</div>
 		</li><!-- end of Question -->
-		<li id="question1" class="question">
-			<div class="question">
-				<h4>Do you know about <em>space</em>?</h4>
 
+		<li class="question" id="question2">
+
+			<div class="question" id="q2" data-role="page">
+				<div data-role="content">
+
+				<h4>Does the sun disappear at night?</h4>
 				<ul>
 					<li class="answer1">
-						<input type="radio" name="question1" class="right">
-						<label for="q1a1">I did, in fact, know about space.</label>
+						<input type="radio" class="wrong">
+						<label for="question2">Yes.</label>
 					</li>
 					<li class="answer2">
-						<input type="radio" name="question1" class="wrong">
-						<label for="q1a2">I have heard about space before.</label>
-					</li>
-					<li>
-						<input type="radio" name="question1" class="wrong">
-						<label for="q1a3">Nope, never heard about that.</label>
+						<input type="radio" class="right">
+						<label for="question2">No.</label>
 					</li>
 				</ul>
-			</div>
-			<div class="answer visulization">
-				<h4 class="answer wrong">You got the question wrong!</h2>
-				<h4 class="answer right">You got the question right!</h2>
+				
+				<ul data-role="listview" data-inset="true">
+	                <li id="listitem"><a href="#h2" class="hint">Need a hint?</a></li>
+				</ul>
 
-				<p>Space is a thing! You should learn about it. It's pretty rad.</p>
+				</div>
+			</div> <!-- /q 1 -->
 
-				<a href="#question2" class="next">Next Question Please!</a>
+			<div class="hint" id="h2" data-role="page">
+				<div data-role="content">		
+					<script src="js/solarsystem.js"></script>
+					<h4>Need a Hint?</h3>
+						
+					<ul data-role="listview" data-inset="true">
+	                    <li id="listitem">Hope that helped! <a href="#q2">Answer it now!</a></li>
+					</ul>
+
+				</div> <!-- /content -->
+			</div> <!-- /h 1 -->
+			
+			
+			<div id="a2" class="answer" data-role="page">
+				<div data-role="content">		
+					<h4 class="answer wrong">You got the question wrong!</h2>
+					<h4 class="answer right">You got the question right!</h2>
+
+					<p>No, the sun is always there - you just can't see it sometimes.</p>
+
+					<a href="#question3" class="next">Next Question Please!</a>
+				</div>
 			</div>
 		</li><!-- end of Question -->
+
+		<li class="question" id="question1">
+
+			<div class="question" id="q1" data-role="page">
+				<div data-role="content">
+
+				<h4>Is the Earth the centre of the solar system?</h4>
+				<ul>
+					<li class="answer1">
+						<input type="radio" class="right">
+						<label for="question1">No, the Earth revolves around the Sun.</label>
+					</li>
+					<li class="answer2">
+						<input type="radio" class="wrong">
+						<label for="question1">Yes, the planets, Sun and Moon revolve around the earth.</label>
+					</li>
+				</ul>
+				
+				<ul data-role="listview" data-inset="true">
+	                <li id="listitem"><a href="#h1" class="hint">Need a hint?</a></li>
+				</ul>
+
+				</div>
+			</div> <!-- /q 1 -->
+
+			<div class="hint" id="h1" data-role="page">
+				<div data-role="content">		
+					<script src="js/solarsystem.js"></script>
+					<h4>Need a Hint?</h3>
+						
+					<ul data-role="listview" data-inset="true">
+	                    <li id="listitem">Hope that helped! <a href="#q1">Answer it now!</a></li>
+					</ul>
+
+				</div> <!-- /content -->
+			</div> <!-- /h 1 -->
+			
+			
+			<div id="a1" class="answer" data-role="page">
+				<div data-role="content">		
+					<h4 class="answer wrong">You got the question wrong!</h2>
+					<h4 class="answer right">You got the question right!</h2>
+
+					<p>The Earth revolves around the Sun, like all other planets in our Solar System do.</p>
+
+					<a href="#question2" class="next">Next Question Please!</a>
+				</div>
+			</div>
+		</li><!-- end of Question -->
+
 	</ol>
 
-	<div id="intro" class="current earth">
-		<h1>Learn about Space!</h1>
+	<div id="intro" class="current earth" data-role="page">
+		<div data-role="content">		
+			<h1>Learn about Space!</h1>
 
-		<h4>Welcome aspiring astronauts!</h4>
+			<h4>Welcome aspiring astronauts!</h4>
 
-		<p>If you want to make it to space, you've got to <em>know</em> about space. Test your knowledge of our solar system, the galaxy and the universe by using this fun quiz!</p>
+			<p>If you want to make it to space, you've got to <em>know</em> about space. Test your knowledge using this fun quiz!</p>
 
-		<a href="#question1" class="start">Start Game</a>
+			<a href="#question1" class="start">Start Game</a>
+		</div>
+	</div>
+
+
+	<div id="ship" class="intro">
+		<a class="ship"></a>
 	</div>
 </div>
 
-<div id="ship" class="intro">
-	<a class="ship"></a>
-</div>
-
 <script>
+	// $(document).bind(
+	// 'touchmove',
+	// 	function(e) {
+	// 		e.preventDefault();
+	// 	}
+	// );
+
 	$(document).ready(function() {
+
+		// START GAME
 		$('a.start').click(function() {
-			$('#question1').slideToggle(1000).addClass('active');
-			$('#intro').delay(800).queue(function() {
-				$(this).remove();
+			$('#question1').slideToggle(1000).delay(1000).queue(function() {
+					$(this).addClass('active');
+				});
+			$('#intro').delay(500).queue(function() {
+				$(this).hide();
 			});
 		});
 
-		$('a.next').click(function() {
-			$('.question.active').addClass('lastActive').prev('.question').slideToggle().addClass('active');
-			$('.question.lastActive').removeClass('active').removeClass('lastActive').delay(800).queue(function() {
-					$(this).remove();
-				});
-		});
 
-		$('input.wrong').click(function() {
-			$(this).parent('li').parent('ul').parent('div.question').siblings('div.answer').addClass('wrong');
-			$(this).parent('li').parent('ul').parent('div.question').hide();
-		});
-
+		// WRONG ANSWER
 		$('input.right').click(function() {
-			$(this).parent('li').parent('ul').parent('div.question').toggle().siblings('div.answer').addClass('right')
+			$(this).parents('div.question').siblings('div.answer').addClass('right');
+			$(this).parents('div.question').hide();
+		});
+
+		// RIGHT ANSWER
+		$('input.wrong').click(function() {
+			$(this).parents('div.question').siblings('div.answer').addClass('wrong');
+			$(this).parents('div.question').hide();
+		});
+
+		// HINT LINK
+		$('a.hint').click(function() {
+			$(this).parents('div.question').siblings('div.hint').toggle();
+		});
+		$('.hint #listitem a').click(function() {
+			$(this).parents('div.hint').addClass('barf').hide();
+		});
+
+
+		// NEXT QUESTION
+		$('a.next').click(function() {
+			$(this).parents('li.question').addClass('lastActive');
+			$('li.lastActive').removeClass('active').prev('li.question').slideToggle().addClass('active');
+			$('li.lastActive').addClass('hide').removeClass('lastActive');
 		});
 	});
 </script>
